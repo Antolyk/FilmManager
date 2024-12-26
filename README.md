@@ -20,22 +20,32 @@ Documentation: Swagger/OpenAPI documentation for API endpoints.
 ## Project Setup
 
 1. Clone the Repository
+```bash
 git clone <Repository_URL>
 cd <Project_Name>
-2. Install Dependencies
+```
+3. Install Dependencies
+```bash
 dotnet restore
-3. Configure Settings:
+```
+5. Configure Settings:
 
 Update the appsettings.json file in the root directory of the project with your connection string:
+```json
 {
   "ConnectionStrings": {
     "DefaultConnection": "Your_Connection_String"
   }
 }
+```
 4. Apply Database Migrations
+```bash
 dotnet ef database update
-5. Run the Project
+```
+6. Run the Project
+```bash
 dotnet run
+```
 ## Architecture
 
 The project follows a 3-tier architecture:
@@ -48,34 +58,34 @@ The project follows a 3-tier architecture:
 ### Film Management
 
 #### Get All Films
-- GET /api/films
-- Query Parameters: genre (optional): Filter by genre.
-sortBy (optional): Sort by attribute (e.g., Release Year, Rating).
-ascending (optional): true for ascending order, false for descending (default: true).
-- Response: List of films.
+- **GET** `/api/films`
+- **Query Parameters:** `genre (optional):` Filter by genre.
+`sortBy (optional):` Sort by attribute (e.g., Release Year, Rating).
+`ascending (optional):` true for ascending order, false for descending (default: true).
+- **Response:** `List of films`.
 
 #### Get Film by ID
 
-- GET /api/films/{id}
-- Path Parameter: id: Film ID.
-- Response: Film details.
+- **GET** `/api/films/{id}`
+- **Path Parameter:** `id:` Film ID.
+- **Response:** `Film details`.
 
 #### Add a New Film
 
-- POST /api/films
-- Request Body: FilmDto (Title, Genre, Director, ReleaseYear, Rating, Description).
-- Response: Created film.
+- **POST** `/api/films`
+- **Request Body:** `FilmDto` (Title, Genre, Director, ReleaseYear, Rating, Description).
+- **Response:** `Created film`.
 
 #### Update Film by ID
-- PUT /api/films/{id}
-- Path Parameter: id: Film ID.
-- Request Body: FilmDto (Title, Genre, Director, ReleaseYear, Rating, Description).
-- Response: Updated film.
+- **PUT** `/api/films/{id}`
+- **Path Parameter:** `id:` Film ID.
+- **Request Body:** `FilmDto` (Title, Genre, Director, ReleaseYear, Rating, Description).
+- **Response:** `Updated film`.
 
 #### Delete Film by ID
-- DELETE /api/films/{id}
-- Path Parameter: id: Film ID.
-- Response: Success or error message.
+- **DELETE** `/api/films/{id}`
+- **Path Parameter:** `id:` Film ID.
+- **Response:** `Success or error message`.
 
 ## Best Practices
 - Dependency Injection: Services and repositories are injected where needed.
