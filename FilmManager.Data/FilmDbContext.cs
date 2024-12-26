@@ -19,7 +19,7 @@ namespace FilmManager.Data
             //The comments below should be removed when it is necessary to perform unit tests
             //if (!optionsBuilder.IsConfigured)
             //{
-              optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=FilmManagerDB;Trusted_Connection=true;TrustServerCertificate=true;");
+                optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=FilmManagerDB;Trusted_Connection=true;TrustServerCertificate=true;");
             //}
         }
     }
