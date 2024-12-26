@@ -38,6 +38,10 @@ Update the appsettings.json file in the root directory of the project with your 
   }
 }
 ```
+Update the FilmDbContext.cs in the FilmManager.Data with your connection string:
+```bash
+optionsBuilder.UseSqlServer("Your_Connection_String");
+```
 4. Apply Database Migrations
 ```bash
 dotnet ef database update
@@ -94,3 +98,4 @@ The project follows a 3-tier architecture:
 
 ## Additional Information
 Unit Testing: Includes tests for key components (optional).
+Uncomment code in FilmDbContext.cs when you need to check unit tests.
